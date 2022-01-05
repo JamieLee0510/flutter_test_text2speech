@@ -35,7 +35,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.test.text2speech"
-        minSdkVersion 16
+        //modify from 16 to 21 due to flutter_tts library
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
