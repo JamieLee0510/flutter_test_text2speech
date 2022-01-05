@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool get isIOS => Platform.isIOS;
   bool get isAndroid => Platform.isAndroid;
 
+  // #region init flutter tts
   void initTts() {
     flutterTts = FlutterTts();
     _setAwaitOptions();
@@ -101,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
       });
     });
   }
+  // #endregion
 
   Future<dynamic> _getLanguages() => flutterTts.getLanguages;
 
@@ -123,12 +125,14 @@ class _MyHomePageState extends State<MyHomePage> {
     //     await flutterTts.speak(_newVoiceText);
     //   }
     // }
-    print(await flutterTts.getLanguages);
-    await flutterTts.setLanguage("zh-CN");
-    await flutterTts.speak('你好');
+
+    await flutterTts.setVolume(1.0);
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.speak('[Interlink L2C] Please confirm your arrival');
   }
 
   Future _setAwaitOptions() async {
+    //To await speak completion.
     await flutterTts.awaitSpeakCompletion(true);
   }
 
